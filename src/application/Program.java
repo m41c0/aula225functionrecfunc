@@ -3,8 +3,6 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import entities.Product;
 import entities.ProductService;
@@ -23,7 +21,7 @@ public class Program {
 
 		ProductService ps = new ProductService();
 		
-		double sum = ps.filterdSum(list);
+		double sum = ps.filterdSum(list, p -> p.getName().charAt(0) == 'T');
 		
 		System.out.println("Sum = " + String.format("%.2f", sum));
 		

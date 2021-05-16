@@ -5,10 +5,10 @@ import java.util.function.Predicate;
 
 public class ProductService {
 
-	public double filterdSum(List<Product> list) {
+	public double filterdSum(List<Product> list, Predicate<Product> criteira) {
 		double sum = 0.0;
 		for (Product p : list) {
-			if (p.getName().charAt(0) == 'T') {
+			if (criteira.test(p)){
 				sum += p.getPrice();
 			}
 		}
