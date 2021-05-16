@@ -21,7 +21,7 @@ public class Program {
 
 		ProductService ps = new ProductService();
 		
-		double sum = ps.filterdSum(list, p -> p.getName().charAt(0) == 'T');
+		double sum = ps.filterdSum(list, p -> p.getPrice()  < 100.0);
 		
 		System.out.println("Sum = " + String.format("%.2f", sum));
 		
